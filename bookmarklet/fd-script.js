@@ -62,7 +62,7 @@ var FD = FD || {};
 
 		var dt = evt.dataTransfer,
 			// IE doesn't like anything other than "Text"
-			data = (( /*@cc_on!@*/0 ) ? dt.getData( "Text" ) : dt.getData( "text/plain" )),
+			data = (dt.getData( "Text" )),
 			files = dt.files || false,
 			count = files.length,
 			acceptedFileExtensions = /^.*\.(ttf|otf|woff)$/i;
@@ -330,7 +330,7 @@ var FD = FD || {};
 					fontFileName = "fd"+fontFileName; // If font name starts with a number prepend 'fd'
 				}
 
-				if( /*@cc_on!@*/0 && !!FD.ltIE9 ) {
+				if( !!FD.ltIE9 ) {
 					// IE8 can't do base64 fonts but it can load cross domain fonts. Pass url instead.
 					data.fontDataURL = data.fontName;
 				} else {
