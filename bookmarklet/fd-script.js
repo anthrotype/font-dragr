@@ -62,7 +62,7 @@ var FD = FD || {};
 
 		var dt = evt.dataTransfer,
 			// IE doesn't like anything other than "Text"
-			data = (dt.getData( "Text" )),
+			data = dt.getData( "Text" ),
 			files = dt.files || false,
 			count = files.length,
 			acceptedFileExtensions = /^.*\.(ttf|otf|woff)$/i;
